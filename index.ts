@@ -1,15 +1,37 @@
+/**
+ * getstatstics module.
+ * @module testtask-getstatistics/index
+ */
+
+
 interface Student {
-  name: string; // имя студента
-  avgMark: number; // средний балл студента
+  /**
+   * The interface that describes student data.
+   * @param {string} name - Student name.
+   * @param {number} avgMark - Student average rating.
+   */
+  name: string;
+  avgMark: number;
 };
 
 interface Statistics {
-  avgMark: number; // средняя оценка всех студентов
-  highestMark: string; // имя студента с самым высоким средним баллом
-  lowestMark: string; // имя студента с самым низким средним баллом
+  /**
+   * The interface that describes output data format.
+   * @param {number} avgMark - Students average rating.
+   * @param {string} highestMark - Student name with the highest average score.
+   * @param {string} lowesMark - Student name with the lower average score.
+   */
+  avgMark: number;
+  highestMark: string;
+  lowestMark: string;
 };
 
 function getStatistics(marks: Student[]): Statistics {
+  /**
+   * A function that returns statistics on students.
+   * @param {Array<Student>} marks - Array with students info.
+   * @return {Statistics} result - Students information.
+   */
   let len: number = marks.length;
   let result: Statistics = {
     avgMark: 0,
@@ -34,6 +56,7 @@ function getStatistics(marks: Student[]): Statistics {
   return result;
 };
 
+// Test data.
 const testMarks = [
   {
     name: 'Vasya',
